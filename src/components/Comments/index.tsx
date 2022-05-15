@@ -1,6 +1,6 @@
 import type { FC } from "react";
-import dayjs from "dayjs";
 import type { ICommentProps } from "./types";
+import { transformCommentDate } from "@/utils/transformers";
 
 const Comments: FC<ICommentProps> = props => {
   return (
@@ -20,7 +20,7 @@ const Comments: FC<ICommentProps> = props => {
             </div>
           </div>
           <div className="text-sm ml-4 mt-0.5 text-gray-500 dark:text-gray-400">
-            {dayjs(props.date).format()}
+            {transformCommentDate(props.date)}
           </div>
         </div>
       </div>
