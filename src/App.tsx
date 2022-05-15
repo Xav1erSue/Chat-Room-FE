@@ -6,7 +6,7 @@ const App: FC = () => {
     <Comments
       username="Xav1er"
       message="Hello World!"
-      date="Sun May 16 2022 00:20:29 GMT+0800 (中国标准时间)"
+      date="Sun May 15 2022 22:17:29 GMT+0800 (中国标准时间)"
     />
   );
 };

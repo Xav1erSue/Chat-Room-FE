@@ -1,8 +1,9 @@
 import dayjs from "dayjs";
 
 export const transformCommentDate = (date: string) => {
-  const interval = dayjs().minute() - dayjs(date).minute();
-  if (interval <= 30) return `${interval} 分钟前`;
+  const interval = Math.floor((dayjs().unix() - dayjs(date).unix()) / 60);
+  if (interval <= 60) return `${interval} 分钟前`;
+  else if (interval <= 60 * 3) return `${Math.floor(interval / 60)} 小时前`;
   const isThisDay = dayjs(date).isAfter(dayjs().startOf("day"));
   const isPrevDay = dayjs(date).isAfter(
     dayjs().startOf("day").subtract(1, "day")
