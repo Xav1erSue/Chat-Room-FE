@@ -1,20 +1,18 @@
 import type { FC } from "react";
+import { useContext } from "react";
+import { ChatRoomContext } from "../../store";
+import Avatar from "./Avatar";
 
 const Header: FC = () => {
+  const { state } = useContext(ChatRoomContext);
   return (
-    <div className="px-5 py-5 flex justify-between items-center bg-white border-b-2">
+    <header className="px-5 py-5 flex justify-between items-center bg-white border-b-2 flex-none">
       <div className="font-semibold text-2xl">Chat Room</div>
-      <div className="w-1/2">
-        <input
-          type="text"
-          placeholder="search"
-          className="rounded-2xl bg-gray-100 py-3 px-5 w-full"
-        />
+      <div className="w-1/2 text-center font-semibold text-l">
+        {state.chatRoom}
       </div>
-      <div className="h-12 w-12 p-2 bg-yellow-500 rounded-full text-white font-semibold flex items-center justify-center">
-        RA
-      </div>
-    </div>
+      <Avatar />
+    </header>
   );
 };
 export default Header;

@@ -3,13 +3,19 @@ import type { IChatListSearchProps } from "./types";
 
 const ChatListSearch: FC<IChatListSearchProps> = props => {
   return (
-    <div className="border-b-2 py-4 px-2">
-      <input
-        type="text"
-        placeholder="search chatting"
-        className="py-2 px-2 border-2 border-gray-200 rounded-2xl w-full"
-      />
-    </div>
+    <section className="border-b-2">
+      <div
+        className="m-4 py-2 px-4 w-4/5 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus-within:(border-blue-500 ring-blue-500)"
+        tabIndex={-1}
+      >
+        <input
+          type="text"
+          className="w-full block outline-none bg-gray-50"
+          placeholder="Search for someone"
+          required
+        />
+      </div>
+    </section>
   );
 };
 

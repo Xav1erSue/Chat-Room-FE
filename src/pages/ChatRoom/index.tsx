@@ -1,18 +1,23 @@
 import type { FC } from "react";
+import { useReducer } from "react";
 import ChatList from "./components/ChatList";
 import Header from "./components/Header";
 import Message from "./components/Message";
+import { ChatRoomContext, chatRoomReducer, chatRoomInfo } from "./store";
 
 const ChatRoom: FC = () => {
+  const [state, dispatch] = useReducer(chatRoomReducer, chatRoomInfo);
+
   return (
-    <div className="absolute w-full h-full">
-      <Header />
-      {/* main */}
-      <div className="flex flex-row  justify-between bg-white">
-        <ChatList />
-        <Message />
-      </div>
-    </div>
+    <ChatRoomContext.Provider value={{ state, dispatch }}>
+      <section className="fixed top-0 bottom-0 left-0 right-0 flex flex-col">
+        <Header />
+        <main className="flex-1 flex flex-row justify-between bg-white">
+          <ChatList />
+          <Message />
+        </main>
+      </section>
+    </ChatRoomContext.Provider>
   );
 };
 export default ChatRoom;
