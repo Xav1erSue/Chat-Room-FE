@@ -1,14 +1,8 @@
 import type { FC } from "react";
-import Comments from "./components/Comments/index";
+import ChatRoom from "./pages/ChatRoom";
 
 const App: FC = () => {
-  return (
-    <Comments
-      username="Xav1er"
-      message="Hello World!"
-      date="Sun May 15 2022 22:17:29 GMT+0800 (中国标准时间)"
-    />
-  );
+  return <ChatRoom />;
 };
 
 export default App;
