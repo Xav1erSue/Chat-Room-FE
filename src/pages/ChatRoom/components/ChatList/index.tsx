@@ -7,15 +7,16 @@ import ChatListItem from "./ChatListItem";
 const ChatList: FC = () => {
   const [chatList, setChatList] = useState([
     {
-      avatar: "https://source.unsplash.com/L2cxSuKWbpo/600x600",
+      avatar: "https://source.unsplash.com/vpOeXr5wmR4/600x600",
       username: "Xav1er",
       lastContent: "hhhhhh",
       isFocus: false,
     },
     {
-      avatar: "https://source.unsplash.com/L2cxSuKWbpo/600x600",
+      avatar: "https://source.unsplash.com/vpOeXr5wmR4/600x600",
       username: "S1mple",
-      lastContent: "why u bully me?",
+      lastContent:
+        "在我们的日常开发工作中，文本溢出截断省略是很常见的一种需考虑的业务场景细节。看上去 “稀松平常” ，但在实现上却有不同的区分，是单行截断还是多行截断？多行的截断判断是基于行数还是基于高度？这些问题之下，都有哪些实现方案？他们之间的差异性和场景适应性又是如何？凡事就怕较真，较真必有成长。本文试图通过编码实践，给出一些答案。",
       isFocus: true,
     },
   ] as IChatListItemProps[]);

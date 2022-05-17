@@ -4,16 +4,21 @@ import type { IChatListItemProps } from "./types";
 const ChatListItem: FC<IChatListItemProps> = props => {
   return (
     <div
-      className={`flex flex-row py-4 px-2 justify-center items-center border-b-2 ${
-        props.isFocus ? "border-l-blue-500 border-l-4" : ""
+      className={`flex py-4 px-10px max-w-70 items-center border-b-2 ${
+        props.isFocus ? "border-l-4 border-l-blue-500" : "px-12px"
       }`}
     >
-      <div className="w-1/4 mr-2">
-        <img src={props.avatar} className="h-10 w-10 rounded-1/2" />
+      <div className="min-w-12 mr-2">
+        <img
+          src={props.avatar}
+          className="min-h-10 min-w-10 max-h-10 max-w-10 rounded-1/2"
+        />
       </div>
-      <div className="w-full">
+      <div className="w-full overflow-hidden">
         <div className="text-lg font-semibold">{props.username}</div>
-        <span className="text-gray-500">{props.lastContent}</span>
+        <div className="text-gray-500 overflow-hidden whitespace-nowrap text-ellipsis">
+          {props.lastContent}
+        </div>
       </div>
     </div>
   );

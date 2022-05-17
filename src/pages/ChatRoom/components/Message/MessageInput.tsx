@@ -3,7 +3,7 @@ import type { FC } from "react";
 const MessageInput: FC = props => {
   return (
     <section
-      className="py-2 px-4 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus-within:(border-blue-500 ring-blue-500) flex"
+      className="my-4 mx-auto py-2 px-4 w-8/9 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus-within:(border-blue-500 ring-blue-500) flex"
       tabIndex={-1}
     >
       <input
