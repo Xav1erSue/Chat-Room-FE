@@ -1,6 +1,7 @@
 import type { FC } from "react";
 import type { IMessageItemProps } from "./types";
 import { transformCommentDate } from "@/utils/transformers";
+import imgUrl from "@/assets/defaultAvatar.jpg";
 
 const MessageItem: FC<IMessageItemProps> = props => {
   return !props.isSelf ? (
@@ -9,7 +10,7 @@ const MessageItem: FC<IMessageItemProps> = props => {
         {!props.isContinue ? (
           <img
             className="rounded-full h-8 w-8 mr-2 mt-1"
-            src={props.avatar ?? "https://picsum.photos/id/1027/200/200"}
+            src={props.avatar || imgUrl}
           />
         ) : (
           <div className="h-8 w-8 mr-2 mt-1 " />
@@ -48,7 +49,7 @@ const MessageItem: FC<IMessageItemProps> = props => {
         {!props.isContinue ? (
           <img
             className="rounded-full h-8 w-8 ml-2 mt-1 "
-            src={props.avatar ?? "https://picsum.photos/id/1027/200/200"}
+            src={props.avatar || imgUrl}
           />
         ) : (
           <div className="h-8 w-8 ml-2 mt-1 " />

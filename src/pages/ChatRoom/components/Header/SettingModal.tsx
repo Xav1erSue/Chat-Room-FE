@@ -6,10 +6,10 @@ import type { ISettingModalProps } from "./types";
 import { set } from "@/utils/storage";
 
 const SettingModal: FC<ISettingModalProps> = props => {
-  const { dispatch } = useContext(ChatRoomContext);
+  const { state, dispatch } = useContext(ChatRoomContext);
 
-  const [username, setUsername] = useState("");
-  const [avatar, setAvatar] = useState("");
+  const [username, setUsername] = useState(state.userInfo.username);
+  const [avatar, setAvatar] = useState(state.userInfo.avatar);
   const [btnText, setBtnText] = useState("设置");
 
   const handleSubmit = () => {
