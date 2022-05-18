@@ -1,16 +1,12 @@
-import { set } from "@/utils/storage";
 import type { FC } from "react";
-import { useContext } from "react";
+import { useState, useContext } from "react";
 import { ChatRoomContext } from "../../store";
+import SettingModal from "./SettingModal";
 
 const Header: FC = () => {
-  const { state, dispatch } = useContext(ChatRoomContext);
+  const { state } = useContext(ChatRoomContext);
 
-  const handleSetUsername = () => {
-    const username = prompt("Enter your username");
-    set("username", username);
-    dispatch({ type: "setUserName", payload: username });
-  };
+  const [visible, setVisible] = useState(false);
 
   return (
     <header className="px-5 py-5 flex justify-between items-center bg-white border-b-2">
@@ -19,11 +15,12 @@ const Header: FC = () => {
       <div className="basis-1/3 flex justify-end">
         <div
           className="w-auto pb-2px font-semibold hover:(cursor-pointer pb-0 border-b-2 border-black) active:(transform scale-97)"
-          onClick={handleSetUsername}
+          onClick={() => setVisible(true)}
         >
-          {state.username}
+          {state.userInfo.username}
         </div>
       </div>
+      <SettingModal visible={visible} onCancel={() => setVisible(false)} />
     </header>
   );
 };

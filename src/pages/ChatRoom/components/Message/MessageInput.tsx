@@ -9,8 +9,10 @@ const MessageInput: FC<IMessageInputProps> = props => {
   const [inputValue, setInputValue] = useState("");
 
   const onSend = () => {
+    if (!inputValue) return;
     props.ws.send({
-      username: state.username,
+      username: state.userInfo.username,
+      avatar: state.userInfo.avatar,
       message: inputValue,
       date: dayjs().format(),
     });
