@@ -34,7 +34,7 @@ const MessageItem: FC<IMessageItemProps> = props => {
       <div className="bg-white text-black antialiased flex max-w-lg">
         <div>
           <div className="bg-gray-100  rounded-3xl px-4 pt-2 pb-2.5">
-            <div className="font-semibold text-sm leading-relaxed">
+            <div className="text-right font-semibold text-sm leading-relaxed">
               {props.username}
             </div>
             <div className="text-normal leading-snug md:leading-normal">

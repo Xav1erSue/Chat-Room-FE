@@ -4,7 +4,10 @@ import type { IMessageInfo } from "./components/Message/types";
 
 export const chatRoomInfo: IChatRoomInfo = {
   chatRoom: "Default ChatRoom",
-  userInfo: get("userInfo") || {},
+  userInfo: get("userInfo") || {
+    username: "defaultUser",
+    avatar: "",
+  },
   messages: get("messages") || ([] as IMessageInfo[]),
 };
 

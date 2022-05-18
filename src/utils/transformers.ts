@@ -1,6 +1,7 @@
 import dayjs from "dayjs";
 
 export const transformCommentDate = (date: string) => {
+  if (dayjs().unix() - dayjs(date).unix() < 60) return "刚刚";
   const interval = Math.floor((dayjs().unix() - dayjs(date).unix()) / 60);
   if (interval <= 60) return `${interval} 分钟前`;
   else if (interval <= 60 * 3) return `${Math.floor(interval / 60)} 小时前`;
